@@ -11,6 +11,7 @@ on:
         options:
         - twrp-12.1
         - twrp-11
+        - twrp-9.0
       DEVICE_TREE:
         description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
         required: true
