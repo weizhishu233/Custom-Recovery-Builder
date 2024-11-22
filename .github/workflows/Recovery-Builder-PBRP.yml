@@ -118,7 +118,7 @@ jobs:
         if [ -f ${{ github.event.inputs.DEVICE_PATH }}/twrp_${{ github.event.inputs.DEVICE_NAME}}.mk ]; then
             echo "DEVICE_MAKEFILE=twrp_${{ github.event.inputs.DEVICE_NAME }}" >> $GITHUB_ENV
         elif [ -f ${{ github.event.inputs.DEVICE_PATH }}/omni_${{ github.event.inputs.DEVICE_NAME}}.mk ]; then
-            echo "DEVICE_MAKEFILE=omni_${{ github.event.inputs.DEVICE_NAME }}" >> $GITHUB_ENV
+            echo "DEVICE_MAKEFILE=omni_cb3" >> $GITHUB_ENV
         else
             echo "No recovery makefile file found!"
         fi
@@ -136,7 +136,7 @@ jobs:
         cd android-recovery
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch omni_cb3-eng && mka pbrp
+        lunch ${{ env.DEVICE_MAKEFILE }}-eng && mka pbrp
       
     - name: Set Build Date # Output will be use in Release
       run: |
