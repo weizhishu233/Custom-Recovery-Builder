@@ -9,25 +9,25 @@ on:
         default: ''
         type: choice
         options:
+        - android-9.0
         - android-12.1
         - android-11.0
-        - android-9.0
       DEVICE_TREE:
         description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
         required: true
-        default: 'https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201.git'
+        default: 'https://github.com/weizhishu233/Android_Iflytek_X3Pro.git'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
         required: true
-        default: 'Android-12'
+        default: 'main'
       DEVICE_PATH:
         description: 'Specify your Device Path' # As is, just like your DEVICE_PATH in your BoardConfig.mk
         required: true
-        default: 'device/asus/AI2201'
+        default: 'device/sprd/cb3'
       DEVICE_NAME:
         description: 'Specify your Device Codename' # As is, just like your PRODUCT_DEVICE in your device tree.
         required: true
-        default: 'AI2201'
+        default: 'cb3'
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
