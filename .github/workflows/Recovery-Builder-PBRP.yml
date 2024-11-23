@@ -133,6 +133,8 @@ jobs:
 
     - name: Building Image
       run: |
+        export PATH=/usr/bin:$PATH
+        python --version
         cd android-recovery
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
